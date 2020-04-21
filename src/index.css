@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.images{
+  float: left;
+  width: 25%;
+}
+
+img{
+height: 35vh;
+width: 50%;
+}
+img:hover{
+  cursor: pointer;
+}
