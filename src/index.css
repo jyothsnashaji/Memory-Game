@@ -14,11 +14,11 @@ code {
 
 .images{
   float: left;
-  width: 25%;
+  width: 20%;
 }
 
 img{
-height: 35vh;
+height: 25vh;
 width: 50%;
 }
 img:hover{

@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {Navbar} from './Navbar';
-import {Titles} from './Titles';
+import {Titles,sources} from './Titles';
 class Game extends React.Component{
 
   constructor(props){
@@ -26,9 +25,15 @@ class Game extends React.Component{
     let clicked=this.state.clicked;
     if(clicked.includes(val)) 
     {
+      alert('YOU LOST!!');
       this.gameOver();
     }
     else{
+      if(clicked.length+1===sources.length)
+        {alert("YOU WON!!");
+        this.gameOver();}
+      else
+
       this.setState({
         highest: clicked.length +1 >this.state.highest ? clicked.length+1 : this.state.highest,
         score:this.state.score+1,
@@ -38,8 +43,15 @@ class Game extends React.Component{
   }
   render(){
     return( <div>
-      <Navbar highest={this.state.highest} score={this.state.score} play={this.gameOver} text="Play Again"/>
+      <div>
+            <div>
+            <button onClick={this.gameOver}>NEW GAME</button> 
+
+            Score: {this.state.score}     Highest: {this.state.highest}
+        </div>
+        </div>
       <Titles onClick={this.handleOnClick} />
+
     </div>);
   }
 }
